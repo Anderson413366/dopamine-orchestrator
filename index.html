@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0a0a0c">
+    <meta
+      name="description"
+      content="A playful single-page sensory alignment game with sound, motion, and score feedback."
+    >
+    <title>Dopamine Orchestrator</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script src="/assets/app.js" defer></script>
+  </head>
+  <body>
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+    <main class="app-shell" aria-labelledby="appTitle">
+      <header class="hero">
+        <h1 id="appTitle">Dopamine Orchestrator</h1>
+        <p>Achieve Harmonic Alignment</p>
+      </header>
+
+      <section class="machine-card" aria-label="Alignment controls">
+        <div class="stats-panel" aria-label="Current alignment status">
+          <div class="stat">
+            <span class="stat-label">Alignment Score</span>
+            <span id="score" class="stat-value stat-value-purple">0</span>
+          </div>
+          <div class="stat stat-right">
+            <span class="stat-label">Sensory Level</span>
+            <span id="levelDisplay" class="stat-value stat-value-pink">CALM</span>
+          </div>
+        </div>
+
+        <div id="machine" class="reel-grid" aria-label="Alignment reels">
+          <div id="reel1" class="reel-node" aria-label="First reel">✦</div>
+          <div id="reel2" class="reel-node" aria-label="Second reel">✦</div>
+          <div id="reel3" class="reel-node" aria-label="Third reel">✦</div>
+        </div>
+
+        <div
+          class="progress-track"
+          role="progressbar"
+          aria-label="Progress toward next alignment cycle"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="0"
+        >
+          <div id="progress" class="progress-fill"></div>
+        </div>
+
+        <div class="controls">
+          <button id="spinBtn" class="button button-primary" type="button">
+            Engage Alignment
+          </button>
+          <button id="modeBtn" class="button button-secondary" type="button">
+            Toggle Sensory
+          </button>
+          <button id="autoBtn" class="button button-secondary" type="button" aria-pressed="false">
+            Auto-Stim Off
+          </button>
+        </div>
+      </section>
+
+      <p id="statusLog" class="status-log" aria-live="polite">
+        Awaiting frequency input...
+      </p>
+    </main>
+  </body>
+</html>

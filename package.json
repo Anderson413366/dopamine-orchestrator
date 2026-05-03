@@ -1,0 +1,18 @@
+{
+  "name": "dopamine-orchestrator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A dependency-free static sensory alignment game prepared for GitHub and Vercel.",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve-static.mjs",
+    "start": "node scripts/serve-static.mjs",
+    "lint": "node scripts/validate-static.mjs",
+    "test": "node scripts/validate-static.mjs",
+    "build": "node scripts/validate-static.mjs && node scripts/build-static.mjs",
+    "verify": "npm run lint && npm test && npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
